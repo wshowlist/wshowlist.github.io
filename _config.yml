@@ -1,0 +1,6 @@
+baseurl: 
+host: 0.0.0.0
+home_url: "http://wlist.kr/"
+form_url: "https://docs.google.com/forms/d/e/1FAIpQLSfEQ0zJrHM33pPlgXhbCi0ailY8T5aATj7UTX5im8UkMY9XfQ/viewform"
+markdown: kramdown
+highlighter: rouge

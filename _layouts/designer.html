@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="designer-header">
+  <div class="container">
+    <div class="row">
+      {% for name in page.designer-name %}
+      <h2 class="designer-name">
+        {{ name }}
+      </h2>
+      {%endfor%}
+      {% for works in page.works-at %}
+      <div class="designer-works-at">
+        {{ works }}
+      </div>
+      {%endfor%}
+      {% for position in page.position %}
+      <div class="designer-position">
+        {{ position }}
+      </div>
+      {%endfor%}
+      <div class="designer-site">
+        {% for site in page.designer-site %}
+        <a href="http://{{ site }}">{{ site }}</a><br>
+        {%endfor%}
+      </div>
+      <div class="designer-site">
+        {% for site in page.designer-site %}
+        <a href="http://{{ site }}">{{ site }}</a><br>
+        {%endfor%}
+      </div>
+    </div>
+    <div class="designer-introduction">
+      {{ page.designer-introdution }}
+    </div>
+  </div>
+</div>
+<div class="designer-works">
+  <div class="container">
+    {{ content }}
+  </div>
+</div>

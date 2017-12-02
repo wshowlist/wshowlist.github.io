@@ -1,0 +1,290 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+// Transitions
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+       -o-transition: $transition;
+          transition: $transition;
+}
+
+// Responsive Font Size
+@mixin font-size($lg, $md, $sm, $xs) {
+  font-size: $lg;
+
+  @media (max-width: 800px) {
+    font-size: $md;
+  }
+  @media (max-width: 600px) {
+    font-size: $sm;
+  }
+  @include mobile {
+    font-size: $xs;
+  }
+}
+
+@font-face {
+  font-family: 'open-arrow';
+  src: url('../asset/fonts/OpenArrow-Regular.eot') format('embedded-opentype'),
+       url('../asset/fonts/OpenArrow-Regular.woff2') format('woff2'),
+       url('../asset/fonts/OpenArrow-Regular.woff') format('woff'),
+       url('../asset/fonts/OpenArrow-Regular.otf') format('opentype'),
+       url('../asset/fonts/OpenArrow-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+2190-21ff;
+}
+
+@import 'open-color';
+@import 'variables';
+@import 'grid';
+@import 'basecoat';
+
+.header {
+  margin: 20px 0;
+
+  .header-title {
+    margin: 0;
+    @include make-col(50%);
+    @include font-size(22px, 20px, 18px, 16px);
+    line-height: 1.4;
+    word-break: keep-all;
+
+    @include mobile {
+      @include make-col(100%);
+      text-align: center;
+      margin: 4px 0;
+    }
+
+    a {
+      color: $text-color-crisp;
+      background-image: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $link-color;
+      }
+    }
+  }
+}
+
+.designers-list {
+  @include margin-top(60px);
+  @include margin-bottom(60px);
+
+  li {
+    display: inline-block;
+    padding: 2px ($grid-gutter-width/2) 2px 0;
+    @include make-col(100%/3);
+    @include font-size(17px, 16px, 15px, 16px);
+    list-style: none;
+
+    a {
+      color: $text-color;
+      background-image: none;
+      @include transition(all 0.1s ease-in);
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $link-color;
+      }
+    }
+
+    @media (max-width: 800px) {
+      @include make-col(50%);
+    }
+    @include mobile {
+      @include make-col(100%);
+      text-align: center;
+    }
+  }
+}
+
+.link-expend-list {
+  @include margin-bottom(120px);
+  @include font-size(17px, 16px, 15px, 16px);
+  text-align: center;
+}
+
+.intro {
+  font-size: 14px;
+  padding: 1em 0;
+  border-top: 1px dashed $divider-color;
+  @include margin-bottom(60px);
+
+  @include mobile {
+    &.en {
+      padding-top: 2em;
+      border-top: none;
+    }
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .copyright {
+    margin-top: 1em;
+  }
+}
+
+.exhibition-info {
+  margin-bottom: 120px;
+  font-size: 14px;
+  border-top: 1px solid $oc-gray-5;
+  @include mobile {
+    margin-bottom: 20vw;
+  }
+
+  strong {
+    color: $text-color-crisp;
+  }
+}
+
+.exhibition-title {
+  padding-top: 1em;
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  @include mobile {
+    &.en {
+      margin-top: 2em;
+    }
+  }
+}
+
+.site-info,
+.exhibition-staff,
+.exhibition-location {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px dashed $divider-color;
+
+  @include mobile {
+    &.en {
+      border-top: none;
+    }
+  }
+}
+
+// 세부 페이지
+.designer-header {
+  margin: 60px 0 0;
+  padding-bottom: 120px;
+  border-bottom: 1px solid $oc-gray-1;
+
+  @include mobile {
+    margin-top: 12vw;
+    padding-bottom: 20vw;
+  }
+}
+
+.designer-name {
+  margin-top: 0;
+  margin-bottom: 0.2em;
+  @include font-size(22px, 21px, 20px, 19px);
+  line-height: 1.3;
+}
+
+.designer-introduction {
+  margin-top: 40px;
+
+  @include mobile {
+    margin-top: 10vw;
+  }
+}
+
+.designer-name,
+.designer-works-at,
+.designer-position,
+.designer-site {
+  @include make-col(50%);
+  padding-top: 1px;
+  padding-bottom: 1px;
+  line-height: 1.5;
+}
+
+.designer-position {
+  text-transform: capitalize;
+}
+
+.designer-site {
+  word-break: break-all;
+}
+
+.designer-introduction,
+.designer-works p {
+  word-break: keep-all;
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: $grid-gutter-width;
+     -moz-column-gap: $grid-gutter-width;
+          column-gap: $grid-gutter-width;
+  -webkit-column-fill: balance;
+     -moz-column-fill: balance;
+          column-fill: balance;
+
+  @include mobile {
+    margin-right: 0;
+    width: 100%;
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+    -webkit-column-gap: $grid-gutter-width;
+       -moz-column-gap: $grid-gutter-width;
+            column-gap: $grid-gutter-width;
+    -webkit-column-fill: balance;
+       -moz-column-fill: balance;
+            column-fill: balance;
+  }
+}
+
+.designer-works {
+  padding-top: 40px;
+  padding-bottom: 120px;
+  min-height: 70vh;
+  background-color: $oc-gray-0;
+
+  @include mobile {
+    padding-bottom: 20vw;
+  }
+}
+
+table.work-information {
+  margin: 0 0 1em;
+  width: 100%;
+
+  th, 
+  td {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    vertical-align: top;
+  }
+
+  thead tr th {
+    width: 50%;
+    text-align: left;
+    @include font-size(18px, 17px, 16px, 16px);
+  }
+
+  th + th,
+  td + td {
+    padding-left: ($grid-gutter-width / 2);
+  }
+
+  & + & {
+    border-top: 1px solid $oc-gray-2;
+
+    thead tr th {
+      padding-top: 1em;
+    }
+  }
+}

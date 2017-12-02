@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko_kr">
+  <head>
+    {% capture page_description %}
+      {% if page.designer-introdution %}
+        {{ page.designer-introdution }}
+      {% else %}
+        이 웹사이트는 (확장하는) 그래픽 디자이너들의 작가, 작품 정보가 실린 목록이다.
+      {% endif %}
+    {% endcapture %}
+    <meta charset="UTF-8">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}W 리스트: (확장하는) 그래픽 디자이너 리스트</title>
+    <!--[if lt IE 9]><script src="/js/html5shiv.min.js"></script><![endif]-->
+    <link rel="shortcut icon" href="/asset/favicon/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="57x157" href="/asset/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/asset/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/asset/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/asset/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/asset/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/asset/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/asset/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/asset/favicon/favicon-16x16.png" sizes="16x16" />
+    <meta name="description" content="{{ page_description | strip }}" />
+    <meta name="application-name" content="wlist"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/asset/favicon/mstile-144x144.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@wshow1234">
+    <meta name="twitter:creator" content="@wshow1234" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}W 리스트: (확장하는) 그래픽 디자이너 리스트" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site.home_url }}{{ page.url | remove_first: '/' }}" />
+    <meta property="og:description" content="{{ page_description | strip }}" />
+    <meta property="og:image" content="{{ site.home_url }}asset/favicon/og-image.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/normalize.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="screen">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110661007-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-110661007-1');
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="row">
+          <h3 class="header-title">
+            <a href="/">W 리스트—(확장하는) 그래픽 디자이너 리스트</a>
+          </h3>
+          <h3 class="header-title en">
+            <a href="/">The W List: A (expanding) List of Graphic Designers</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+    {{ content }}
+  </body>
+</html>

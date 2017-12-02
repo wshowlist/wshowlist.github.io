@@ -1,0 +1,100 @@
+//  Clearfix
+//  ───────────────────────────────────
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.clearfix {
+  @include clearfix();
+}
+
+
+//  Container
+//  ───────────────────────────────────
+
+.container {
+  @include clearfix();
+  margin-left: auto;
+  margin-right: auto;
+  padding-left:  $container-padding-base;
+  padding-right: $container-padding-base;
+  max-width: 1000px;
+  
+  @media (max-width: 543px) {
+    padding-left:  $container-padding-lg;
+    padding-right: $container-padding-lg;
+  }
+}
+
+
+//  Mobile
+//  ───────────────────────────────────
+
+@mixin mobile() {
+  @media (max-width: 425px) {
+    @content
+  }
+}
+
+
+//  Row
+//  ───────────────────────────────────
+
+@mixin make-row {
+  margin-left:  ($grid-gutter-width / -2);
+  margin-right: ($grid-gutter-width / -2);
+  @include clearfix();
+}
+
+.row {
+  @include make-row;
+}
+
+
+//  Columns
+//  ───────────────────────────────────
+
+@mixin make-col($size: 100%) {
+  position: relative;
+  min-height: 1px;
+  padding-right: ($grid-gutter-width / 2);
+  padding-left:  ($grid-gutter-width / 2);
+  float: left;
+  width: $size;
+}
+
+.column-half {
+  @include make-col(50%);
+
+  @include mobile {
+    @include make-col(100%);
+  }
+}
+
+
+// Margin
+//  ───────────────────────────────────
+
+@mixin margin-top($size) {
+  margin-top: $size;
+
+  @include mobile {
+    margin-top: $size/2;
+  }
+}
+
+@mixin margin-bottom($size) {
+  margin-bottom: $size;
+
+  @include mobile {
+    margin-bottom: $size/2;
+  }
+}

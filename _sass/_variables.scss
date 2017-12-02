@@ -1,0 +1,21 @@
+//  Grid
+//  ───────────────────────────────────
+
+$container-padding-base:     4%;
+$container-padding-lg:       ($container-padding-base * 1.2);
+$grid-gutter-width:          30px;
+
+
+//  Typography
+//  ───────────────────────────────────
+
+$font-family-base:      'open-arrow', -apple-system, BlinkMacSystemFont, Apple SD Gothic Neo, '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Verdana, Arial, sans-serif;
+
+$text-color:            $oc-gray-8;
+$text-color-crisp:      $oc-gray-9;
+$link-color:            #fd1c1c;
+$link-hover-color:      darken($link-color, 15%);
+
+$selection-bg:          $oc-gray-2;
+$divider-color:         $oc-gray-4;
+
