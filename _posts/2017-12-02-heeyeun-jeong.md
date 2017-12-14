@@ -6,7 +6,7 @@ permalink: heeyeun-jeong
 designer-name: ["정희연", "Heeyeun Jeong"]
 works-at: ["스포카", "Spoqa"]
 position: ["제품 디자이너", "product designer"]
-designer-introdution: "정희연은 홍익대학교 산업디자인과를 졸업했다. 현재는 스포카의 프로덕트 디자이너다. 2016년 서울 ‘비핸스 포트폴리오 리뷰’(Behance portfolio reviews)를 개최했으며, 스포카 디자인 가이드라인 사이트와 ‹오픈 컬러›, ‹오픈 애로우›를 제작했다."
+designer-introdution: "정희연은 홍익대학교 산업디자인과를 졸업했다. 현재는 스포카의 프로덕트 디자이너다. 2016년 서울 ‘비핸스 포트폴리오 리뷰’(Behance portfolio reviews)를 개최했으며, 스포카 디자인 가이드라인(spoqa design guideline) 사이트와 ‹오픈 컬러›, ‹오픈 애로우›를 제작했다."
 
 designer-site: [ yeun.github.io ]
 ---
